@@ -22,9 +22,10 @@
 
 
         }
-
+        //Task 1
         public static void GetNumberSum(int input)
         {
+            
             if (1000 <= input && input <= 9999)
             {
                 int firstLevel = input % 10;
@@ -33,7 +34,7 @@
                 int fourthLevel = input / 1000;
 
                 int sum = firstLevel + secondLevel + thirdLevel + fourthLevel;
-
+                //Output
                 Console.WriteLine(sum);
             }
             else
@@ -42,7 +43,7 @@
             }
             
         }
-
+        //Task2
         public static void CheckNumbers(int value)
         {
             int firstLevel = value % 10;
@@ -58,7 +59,7 @@
                 Console.WriteLine("bütün rəqəmlər bərabər deyil ");
             }
         }
-
+        //Task3
         public static void ChangeLanguage(char inputValue)
         {
             char value = char.ToLower(inputValue);
@@ -76,7 +77,7 @@
                     break;
             }
         }
-
+        //Task4
         public static void SearchMonths(string monthName)
         {
             switch (monthName)
