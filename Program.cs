@@ -1,4 +1,6 @@
-﻿namespace CodeLesson
+﻿using System.Text;
+
+namespace CodeLesson
 {
     internal class Program
     {
@@ -22,11 +24,11 @@
 
 
         }
-        //Task 1
+
         public static void GetNumberSum(int input)
         {
-            
-            if (1000 <= input && input <= 9999)
+
+            if ((1000 <= input & input <= 9999) | (-1000 >= input && -9999 <= input))
             {
                 int firstLevel = input % 10;
                 int secondLevel = input / 10 % 10;
@@ -34,7 +36,10 @@
                 int fourthLevel = input / 1000;
 
                 int sum = firstLevel + secondLevel + thirdLevel + fourthLevel;
-                //Output
+
+                //Change language encoding
+                Console.OutputEncoding = Encoding.UTF8;
+
                 Console.WriteLine(sum);
             }
             else
@@ -43,26 +48,35 @@
             }
             
         }
-        //Task2
+
         public static void CheckNumbers(int value)
         {
-            int firstLevel = value % 10;
-            int secondLevel = value / 10 % 10;
-            int thirdLevel = value / 100;
+            if ((100 <= value & value <= 999) | (-100 >= value && -999 <= value))
+            {
+                int firstLevel = value % 10;
+                int secondLevel = value / 10 % 10;
+                int thirdLevel = value / 100;
 
-            if (firstLevel == secondLevel && secondLevel == thirdLevel)
-            {
-                Console.WriteLine("bütün rəqəmlər bərabərdir");
+                //Change language encoding
+                Console.OutputEncoding = Encoding.UTF8;
+
+                if (firstLevel == secondLevel && secondLevel == thirdLevel)
+                {
+                    Console.WriteLine("bütün rəqəmlər bərabərdir");
+                }
+                else
+                {
+                    Console.WriteLine("bütün rəqəmlər bərabər deyil ");
+                }
             }
-            else
-            {
-                Console.WriteLine("bütün rəqəmlər bərabər deyil ");
-            }
+            
         }
-        //Task3
+
         public static void ChangeLanguage(char inputValue)
         {
             char value = char.ToLower(inputValue);
+            //Change language encoding
+            Console.OutputEncoding = Encoding.UTF8;
 
             switch (value)
             {
@@ -77,9 +91,12 @@
                     break;
             }
         }
-        //Task4
+
         public static void SearchMonths(string monthName)
         {
+            //Change language encoding
+            Console.OutputEncoding = Encoding.UTF8;
+
             switch (monthName)
             {
                 case "January":
