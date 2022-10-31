@@ -1,5 +1,7 @@
 ﻿using System.Text;
 
+
+
 namespace CodeLesson
 {
     internal class Program
@@ -7,8 +9,8 @@ namespace CodeLesson
         static void Main(string[] args)
         {
             //Task1
-            var sum = Console.ReadLine();
-            GetNumberSum(int.Parse(sum));
+            //var sum = Console.ReadLine();
+            //GetNumberSum(int.Parse(sum));
 
             //Task2
             var number = Console.ReadLine();
@@ -46,16 +48,16 @@ namespace CodeLesson
             {
                 Console.WriteLine("Wrong data");
             }
-            
+
         }
 
         public static void CheckNumbers(int value)
         {
             if ((100 <= value & value <= 999) | (-100 >= value && -999 <= value))
             {
-                int firstLevel = value % 10;
+                int thirdLevel = value % 10;
                 int secondLevel = value / 10 % 10;
-                int thirdLevel = value / 100;
+                int firstLevel = value / 100;
 
                 //Change language encoding
                 Console.OutputEncoding = Encoding.UTF8;
@@ -64,12 +66,27 @@ namespace CodeLesson
                 {
                     Console.WriteLine("bütün rəqəmlər bərabərdir");
                 }
+                else if (firstLevel == secondLevel || secondLevel == thirdLevel || firstLevel == thirdLevel)
+                {
+                    if (firstLevel == secondLevel)
+                    {
+                        Console.WriteLine("birinci ve ikinci rəqəmlər bərabərdir");
+                    }
+                    else if (secondLevel == thirdLevel)
+                    {
+                        Console.WriteLine("ikinci ve ucuncu rəqəmlər bərabərdir");
+                    }
+                    else
+                    {
+                        Console.WriteLine("birinci ve ucuncu reqemler beraberdi");
+                    }
+                }
                 else
                 {
                     Console.WriteLine("bütün rəqəmlər bərabər deyil ");
                 }
             }
-            
+
         }
 
         public static void ChangeLanguage(char inputValue)
@@ -99,8 +116,8 @@ namespace CodeLesson
 
             switch (monthName)
             {
-                case "January":
-                case "March":
+                case "January"or "March":
+               
                 case "May":
                 case "July":
                 case "Auqust":
@@ -109,7 +126,7 @@ namespace CodeLesson
                     Console.WriteLine("31");
                     break;
 
-                
+
                 case "April":
                 case "June":
                 case "September":
