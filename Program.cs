@@ -9,8 +9,8 @@ namespace CodeLesson
         static void Main(string[] args)
         {
             //Task1
-            //var sum = Console.ReadLine();
-            //GetNumberSum(int.Parse(sum));
+            var sum = Console.ReadLine();
+            GetNumberSum(int.Parse(sum));
 
             //Task2
             var number = Console.ReadLine();
